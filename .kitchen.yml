@@ -11,6 +11,8 @@ platforms:
       network:
       - ["forwarded_port", {guest: 8080, host: 3333}]
       - ["private_network", {ip: "33.33.33.33"}]
+    driver_config:
+      ssh_key:  <%= ENV['SSH_KEY_PATH'] %>
 suites:
   - name: default
     run_list: ["recipe[jenkins-java::default]"]
